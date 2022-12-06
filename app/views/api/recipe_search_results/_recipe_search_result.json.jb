@@ -1,0 +1,15 @@
+recipe = recipe_search_result.recipe
+
+{
+  recipe: {
+    id: recipe.id,
+    title: recipe.title,
+    rating: recipe.rating,
+    ingredients: recipe.ingredients,
+    image_url: recipe.image_url,
+    cook_time_mins: recipe.cook_time_mins,
+    prep_time_mins: recipe.prep_time_mins,
+  },
+  unmatched_ingredients: recipe_search_result.unmatched_ingredients,
+  matched_ingredients: recipe_search_result.matched_ingredients,
+}

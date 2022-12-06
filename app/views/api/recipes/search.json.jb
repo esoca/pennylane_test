@@ -1,0 +1,3 @@
+{
+  data: render('api/recipe_search_results/page', page: @recipe_search_results_page),
+}

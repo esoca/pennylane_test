@@ -1,0 +1,6 @@
+{
+  id: api_error.id,
+  http_code: api_error.http_code,
+  developer_message: api_error.developer_message,
+  details: api_error.details,
+}

@@ -1,0 +1,3 @@
+{
+  data: render('api_errors/api_error', api_error: @api_error)
+}

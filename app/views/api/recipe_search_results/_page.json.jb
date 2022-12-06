@@ -1,0 +1,7 @@
+{
+  values: render(partial: 'api/recipe_search_results/recipe_search_result', collection: page.values, as: :recipe_search_result),
+  total_count: page.total_count,
+  page_number: page.page_number,
+  page_size: page.page_size,
+  total_pages: page.total_pages,
+}
