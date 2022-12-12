@@ -1,5 +1,11 @@
 module Recipes
   class Seeder
+
+    # Service that seed all available recipes into the database:
+    # - It returns the number of new seeded recipes.
+    # - It can be executed twice without causing issues (idempotent in the end-state).
+    #
+    # @return [Integer]
     def seed
       return 0 if already_seeded?
 

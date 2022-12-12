@@ -2,6 +2,13 @@ module Recipes
   class Searcher
     attr_reader :ingredient_search_terms, :page_number, :page_size
 
+    # Service that return RecipeSearchResults from a user search:
+    # - It's paginated and return a specific Page.
+    # - The order of results is first by recipes with fewer ingredients missing and then by the rating.
+    #
+    # @param [Array<String>] ingredient_search_terms
+    # @param [Integer] page_number
+    # @param [Integer] page_size
     def initialize(ingredient_search_terms:, page_number:, page_size:)
       raise ArgumentError.new("ingredient_search_terms cannot be empty") if ingredient_search_terms.empty?
       raise ArgumentError.new("page_number should be positive") unless page_number.positive?
@@ -12,6 +19,7 @@ module Recipes
       @page_size = page_size
     end
 
+    # @return [Page]
     def search
       ingredients_like_sql = ingredient_search_terms.map {|ingredient| '(\m' + Recipe.sanitize_sql_like(ingredient) + '\M)'}
                                                     .join('|')
