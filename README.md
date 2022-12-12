@@ -45,15 +45,20 @@ The code base follows a multi-repo split in this backend repo and the frontend r
 # Local Development
 
 ### Console 1
+You need docker installed in your development machine.
 ```
 git clone https://github.com/esoca/pennylane_test
 cd pennylane_test
-make s
+make migrate
+make seed
+make run
 ```
 
 ### Console 2
+You need node installed in your development machine.
 ```
 git clone https://github.com/esoca/pennylane_test_web
 cd pennylane_test_web
+npm install
 npm start
 ```
